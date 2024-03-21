@@ -1,7 +1,11 @@
 from Bingo import *
 
+
 def main():
-    cartones = []  # Aquí debes definir la variable cartones
+    cartones = []  # Inicializamos la lista de cartones vacía
+    numeros = []   # Lista para guardar los números sorteados
+    numeros_bombo = list(range(1, 99))  # Números posibles en el bombo
+
     while True:
         print("#" * 25)
         print("#        Bingo          #")
@@ -19,23 +23,29 @@ def main():
 
         opcion = int(input())
 
+        limpiar_pantalla()
         if opcion == 1:
             limpiar_pantalla()
             print("¿Cuántos cartones quieres?")
             num_cartones = int(input())
-            cartones = comprar_carton(num_cartones)  # Asignar el resultado de comprar_carton a cartones
+            cartones.extend(comprar_carton(num_cartones))  # Agregamos los cartones comprados a la lista
         elif opcion == 2:
-            limpiar_pantalla()
             ver_cartones(cartones)  # Mostrar los cartones almacenados en la variable cartones
         elif opcion == 3:
             limpiar_pantalla()
-            bombo(cartones, bola)
+            if not numeros_bombo:
+                print("Se han acabado las bolas.")
+                continue
+            bola = random.choice(numeros_bombo)
+            print(f"Ha salido la bola: {bola}")
+            cartones = bombo(cartones, bola, numeros)
         elif opcion == 4:
             limpiar_pantalla()
-            print("Los números que han salido son:", numeros(numero, bola))
+            print("Los números que han salido son:", sorted(numeros))
         elif opcion == 5:
             limpiar_pantalla()
             print("¡Gracias por usar mi Aplicación!")
             break
+
 if __name__ == "__main__":
     main()
