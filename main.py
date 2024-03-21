@@ -1,6 +1,5 @@
 from Bingo import *
 
-
 def main():
     cartones = []  # Inicializamos la lista de cartones vacía
     numeros = []   # Lista para guardar los números sorteados
