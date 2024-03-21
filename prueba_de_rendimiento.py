@@ -1,5 +1,7 @@
 import timeit
 import random
+import os
+import platform
 
 def comprar_carton(numero_cartones):
     print(f'Has comprado {numero_cartones} cartones.')
@@ -18,4 +20,3 @@ def comprar_carton(numero_cartones):
 tiempo_ejecucion = timeit.timeit(lambda: comprar_carton(3), number=1)
 
 print("Tiempo de ejecución:", tiempo_ejecucion, "segundos")
-
