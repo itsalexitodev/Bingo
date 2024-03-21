@@ -41,7 +41,7 @@ def main():
             cartones = bombo(cartones, bola, numeros)
         elif opcion == 4:
             limpiar_pantalla()
-            print("Los números que han salido son:", sorted(numeros))
+            print(f"Los números que han salido son:", {numeros})
         elif opcion == 5:
             limpiar_pantalla()
             print("¡Gracias por usar mi Aplicación!")
