@@ -1,6 +1,7 @@
 import random
 import os
 import platform
+import time
 
 def limpiar_pantalla():
     sistema_operativo = platform.system()
@@ -33,4 +34,11 @@ def ver_cartones(cartones):
         print()  # Imprimir una línea en blanco entre cartones
 
 def bombo(cartones, bola, numeros):
-   pass
+    limpiar_pantalla()
+    print("Bola sacada del bombo:", bola)
+    time.sleep(1)
+    
+    for Filas in cartones:
+        for columnas in cartones:
+            if bola == Filas and columnas:
+                
